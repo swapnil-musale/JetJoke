@@ -63,7 +63,7 @@ dependencies {
     testImplementation libs.test.junit
     androidTestImplementation libs.test.espresso
     androidTestImplementation libs.test.junitExtension
-    androidTestImplementation libs.test.compose.ui.test
+//    androidTestImplementation libs.test.compose.ui.test
 
     debugImplementation libs.test.compose.ui.tooling
     debugImplementation libs.test.compose.manifest
