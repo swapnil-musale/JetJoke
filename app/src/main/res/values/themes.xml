@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.JetJoke" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.SplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.JetJoke</item>
+    </style>
 </resources>

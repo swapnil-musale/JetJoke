@@ -23,6 +23,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -62,8 +63,7 @@ dependencies {
     testImplementation libs.test.junit
     androidTestImplementation libs.test.espresso
     androidTestImplementation libs.test.junitExtension
-    androidTestImplementation platform(libs.test.compose.bom)
-    androidTestImplementation libs.test.compose.ui.test
+//    androidTestImplementation libs.test.compose.ui.test
 
     debugImplementation libs.test.compose.ui.tooling
     debugImplementation libs.test.compose.manifest
