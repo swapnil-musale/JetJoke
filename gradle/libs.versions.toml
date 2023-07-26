@@ -15,6 +15,12 @@ kotlinBOM = "1.9.0"
 androidXLifecycle = "2.6.1"
 androidMaterial3 = "1.1.1"
 junit4 = "1.4.3"
+hiltAndroid = "2.46.1"
+retrofit = "2.9.0"
+okHttp3 = "4.11.0"
+moshi = "1.14.0"
+javaxInject = "1"
+hiltNavigation = "1.0.0"
 
 junit = "4.13.2"
 junitExtension = "1.1.5"
@@ -35,6 +41,16 @@ compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
 compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidMaterial3" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-converter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okHttp3" }
+loggin-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okHttp3" }
+javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject"}
+hilt-navigation = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
 
 test-junit = { module = "junit:junit", version.ref = "junit" }
 test-junitExtension = { module = "androidx.test.ext:junit", version.ref = "junitExtension" }
@@ -46,6 +62,7 @@ test-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 
 [bundles]
 androidx-compose-bom = ["compose-bom", "ui-tooling", "compose-ui", "compose-ui-graphics", "compose-tooling-preview", "androidx-material3"]
+retrofit = ["retrofit", "moshi-converter", "okhttp3", "loggin-interceptor"]
 
 
 [plugins]
@@ -54,3 +71,5 @@ android-library = { id = "com.android.library", version.ref = "androidLibrary" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }
 java-library = { id = "java-library" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinAndroid" }

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -36,6 +38,7 @@ android {
     }
     buildFeatures {
         compose true
+        buildConfig true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
@@ -60,11 +63,21 @@ dependencies {
     implementation libs.compose.navigation
     implementation libs.androidx.lifecycle
 
+    implementation libs.hilt.android
+    implementation libs.hilt.navigation
+    kapt libs.hilt.compiler
+
+    implementation libs.bundles.retrofit
+    kapt libs.moshi.codegen
+
     testImplementation libs.test.junit
     androidTestImplementation libs.test.espresso
     androidTestImplementation libs.test.junitExtension
-//    androidTestImplementation libs.test.compose.ui.test
 
     debugImplementation libs.test.compose.ui.tooling
     debugImplementation libs.test.compose.manifest
+}
+
+kapt {
+    correctErrorTypes true
 }

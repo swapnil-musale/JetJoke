@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -32,7 +34,18 @@ android {
 
 dependencies {
 
+    implementation project(path: ':domain')
     implementation libs.core.ktx
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+
+    implementation libs.bundles.retrofit
+    kapt libs.moshi.codegen
+
     testImplementation libs.test.junit
     testImplementation libs.test.espresso
+}
+
+kapt {
+    correctErrorTypes true
 }
