@@ -18,7 +18,7 @@ junit4 = "1.4.3"
 hiltAndroid = "2.46.1"
 retrofit = "2.9.0"
 okHttp3 = "4.11.0"
-moshi = "1.14.0"
+moshi = "1.15.0"
 javaxInject = "1"
 hiltNavigation = "1.0.0"
 
