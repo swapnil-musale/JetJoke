@@ -4,30 +4,30 @@ import com.squareup.moshi.Json
 
 data class JokeResponse(
 
-    @Json(name = "delivery")
+    @field:Json(name = "delivery")
     val delivery: String? = null,
 
-    @Json(name = "safe")
+    @field:Json(name = "safe")
     val safe: Boolean? = null,
 
-    @Json(name = "setup")
+    @field:Json(name = "setup")
     val setup: String? = null,
 
-    @Json(name = "id")
+    @field:Json(name = "id")
     val id: Int? = null,
 
-    @Json(name = "error")
+    @field:Json(name = "error")
     val error: Boolean? = null,
 
-    @Json(name = "category")
+    @field:Json(name = "category")
     val category: String? = null,
 
-    @Json(name = "type")
+    @field:Json(name = "type")
     val type: String? = null,
 
-    @Json(name = "lang")
+    @field:Json(name = "lang")
     val lang: String? = null,
 
-    @Json(name = "message")
+    @field:Json(name = "message")
     val message: String? = null,
 )
