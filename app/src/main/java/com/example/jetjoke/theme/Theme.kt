@@ -10,27 +10,33 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80,
-)
+private val darkColorScheme = darkColorScheme()
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40,
+private val lightColorScheme = lightColorScheme(
+    primary = Color(0xffe9707e),
+    primaryContainer = Color(0xffe9707e),
+    secondary = Color(0xff2cd3e1),
+    secondaryContainer = Color(0xff018786),
+    background = Color(0xffeae4e8),
+    surface = Color(0xffeae4e8),
+    error = Color(0xffef5350),
+    onPrimary = Color(0xffffffff),
+    onSecondary = Color(0xff000000),
+    onBackground = Color(0xff000000),
+    onSurface = Color(0xff000000),
+    onError = Color(0xffffffff),
 )
 
 @Composable
 fun JetJokeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
@@ -39,8 +45,8 @@ fun JetJokeTheme(
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> lightColorScheme
+        else -> lightColorScheme
     }
     val view = LocalView.current
     if (!view.isInEditMode) {
