@@ -65,8 +65,8 @@ fun HomeScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(color = MaterialTheme.colorScheme.background),
-    ) { _ ->
-        HomeHeader()
+    ) { paddingValues ->
+        HomeHeader(modifier = Modifier.padding(paddingValues = paddingValues))
         Card(
             modifier = Modifier
                 .fillMaxWidth()

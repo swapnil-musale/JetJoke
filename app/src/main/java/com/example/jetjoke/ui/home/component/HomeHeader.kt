@@ -21,9 +21,9 @@ import com.example.jetjoke.R
 import com.example.jetjoke.theme.JetJokeTheme
 
 @Composable
-fun HomeHeader() {
+fun HomeHeader(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .height(height = 250.dp)
             .background(color = MaterialTheme.colorScheme.primary),
