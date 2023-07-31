@@ -33,6 +33,7 @@ androidx-splashScreen = { module = "androidx.core:core-splashscreen", version.re
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
 androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidXLifecycle" }
+compose-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidXLifecycle" }
 
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlinBOM" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBOM" }

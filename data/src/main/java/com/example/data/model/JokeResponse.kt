@@ -10,6 +10,9 @@ data class JokeResponse(
     @field:Json(name = "safe")
     val safe: Boolean? = null,
 
+    @field:Json(name = "joke")
+    val joke: String? = null,
+
     @field:Json(name = "setup")
     val setup: String? = null,
 

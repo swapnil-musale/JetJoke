@@ -15,6 +15,7 @@ class JokeRepositoryImpl @Inject constructor(private val jokeApi: JokeApi) : Jok
             response.body().toDto()
         } catch (exception: Exception) {
             JokeResponse(
+                joke = "",
                 setUp = "",
                 delivery = "",
                 category = "",
