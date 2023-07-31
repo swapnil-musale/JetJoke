@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface JokeApi {
 
-    @GET("joke/Programming")
+    @GET("joke/Any")
     suspend fun getJoke(): Response<JokeResponse>
 }

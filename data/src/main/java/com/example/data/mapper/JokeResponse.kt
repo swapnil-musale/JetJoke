@@ -10,5 +10,6 @@ fun JokeResponse?.toDto(): com.example.domain.model.JokeResponse {
         delivery = this?.delivery ?: "",
         category = this?.category ?: "",
         message = this?.message ?: "",
+        joke = this?.joke ?: "",
     )
 }
