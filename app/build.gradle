@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
@@ -69,7 +70,7 @@ dependencies {
     kapt libs.hilt.compiler
 
     implementation libs.bundles.retrofit
-    kapt libs.moshi.codegen
+    ksp libs.moshi.codegen
 
     testImplementation libs.test.junit
     androidTestImplementation libs.test.espresso

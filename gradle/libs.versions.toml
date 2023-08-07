@@ -5,6 +5,7 @@ kotlinAndroid = "1.9.0"
 kotlinJvm = "1.9.0"
 androidxComposeCompiler = "1.5.0"
 jvmTarget = "18"
+kotlinKsp = "1.9.0-1.0.11"
 
 coreKtx = "1.10.1"
 splashScreen = "1.0.1"
@@ -74,3 +75,4 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }
 java-library = { id = "java-library" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinAndroid" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlinKsp" }
