@@ -1,5 +1,5 @@
 plugins {
-    id 'java-library'
+    id("java-library")
     alias(libs.plugins.kotlin.jvm)
 }
 
@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-    implementation libs.javax.inject
+    implementation(libs.javax.inject)
 }
