@@ -12,7 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "JetJoke"
-include ':app'
-include ':domain'
-include ':data'
+include(":app", ":domain", ":data")
