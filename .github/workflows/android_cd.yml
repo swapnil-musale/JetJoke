@@ -23,7 +23,7 @@ jobs:
       - name: Bump version code
         uses: chkfung/android-version-actions@v1.1
         with:
-          gradlePath: app/build.gradle
+          gradlePath: app/build.gradle.kts
           versionCode: ${{github.run_number}}
 
       - name: Grant execute permission for gradlew
