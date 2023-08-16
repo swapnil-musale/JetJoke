@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.data"
+    namespace = "com.devx.data"
     compileSdk = 34
 
     defaultConfig {

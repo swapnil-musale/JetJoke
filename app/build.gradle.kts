@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.jetjoke"
+    namespace = "com.devx.jetjoke"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.jetjoke"
+        applicationId = "com.devx.jetjoke"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
