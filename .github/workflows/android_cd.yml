@@ -1,8 +1,9 @@
-name: Deploy App CD Pipeline
+name: Android CD Pipeline
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
   build:
