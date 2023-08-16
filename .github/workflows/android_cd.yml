@@ -54,4 +54,4 @@ jobs:
           status: inProgress
           inAppUpdatePriority: 2
           userFraction: 0.33
-          whatsNewDirectory: distribution/whatsnew
+#          whatsNewDirectory: distribution/whatsnew
