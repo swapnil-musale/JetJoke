@@ -18,7 +18,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Grant rights
-        run: chmod +x build.gradle
+        run: chmod +x gradlew
 
       - name: Build Release AAB
         id: buildRelease
