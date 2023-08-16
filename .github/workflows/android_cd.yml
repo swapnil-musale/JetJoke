@@ -21,7 +21,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Bump version code
-        uses: chkfung/android-version-actions@v1.1
+        uses: chkfung/android-version-actions@v1.2
         with:
           gradlePath: app/build.gradle.kts
           versionCode: ${{github.run_number}}
