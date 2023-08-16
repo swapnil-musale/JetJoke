@@ -26,7 +26,7 @@ javaxInject = "1"
 hiltNavigation = "1.0.0"
 
 # Testing Library Version
-junit4 = "1.4.3"
+junit4 = "1.5.0"
 junit = "4.13.2"
 junitExtension = "1.1.5"
 espressoCore = "3.5.1"
