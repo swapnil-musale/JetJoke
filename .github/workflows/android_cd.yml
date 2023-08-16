@@ -1,8 +1,8 @@
-name: Deploy App CI
+name: Deploy App CD Pipeline
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -34,16 +34,13 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-      - name: Create service_account.json
-        id: createServiceAccount
-        run: echo '${{ secrets.SERVICE_ACCOUNT_JSON }}' > service_account.json
-
-      - name: Deploy to Play Store (BETA)
+      - name: Deploy to Play Store
         id: deploy
         uses: r0adkll/upload-google-play@v1
         with:
-          serviceAccountJson: service_account.json
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: com.devx.jetjoke
-          releaseFile: app/build/outputs/bundle/release/app-release.aab
-          track: beta
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          track: production
+          userFraction: 0.99
           whatsNewDirectory: whatsnew/
