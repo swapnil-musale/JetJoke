@@ -1,7 +1,9 @@
 package com.devx.data.model
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
 
+@Keep
 data class JokeResponse(
 
     @field:Json(name = "delivery")
