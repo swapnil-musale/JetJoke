@@ -53,5 +53,4 @@ jobs:
           track: production
           status: inProgress
           inAppUpdatePriority: 2
-          userFraction: 0.33
-#          whatsNewDirectory: distribution/whatsnew
+          userFraction: 0.99
