@@ -51,6 +51,6 @@ jobs:
           packageName: com.devx.jetjoke
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: production
-          status: inProgress
+          status: completed
           inAppUpdatePriority: 2
           userFraction: 0.99
