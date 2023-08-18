@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# pre-commit hook will run every time when we try to commit code through Android Studio IDE or Command Line
+# - It will run the unit test before committing code
+# It will return exit 0 if everything well and good else return other than zero with valid message to fix it.
+#
+
+echo "Running Unit Tests ..."
+bash ./gradlew test --stacktrace
+
+status=$?
+
+if [ "$status" = 0 ] ; then
+	echo "Unit test passed successfully."
+	exit 0
+else
+	echo 1>&2 "Unit test failed."
+	exit 1
+fi

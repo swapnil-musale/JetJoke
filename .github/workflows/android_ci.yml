@@ -24,8 +24,9 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Unit tests
-        run: bash ./gradlew test --stacktrace
+# Unit test implementation added through git hooks
+#      - name: Unit tests
+#        run: bash ./gradlew test --stacktrace
 
   build:
     name: Build Project
