@@ -1,4 +1,7 @@
 name: Android CD Pipeline
+# write permission is required to create release through github action
+permissions:
+  contents: write
 
 on:
   push:
