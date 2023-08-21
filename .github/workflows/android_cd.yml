@@ -63,7 +63,7 @@ jobs:
         with:
           name: release-artifacts
           paths: |
-            app/build/outputs/apk/release/
+#            app/build/outputs/apk/release/
             app/build/outputs/bundle/release/
 
       - name: Create Github Release
@@ -72,5 +72,5 @@ jobs:
           generate_release_notes: true
           prerelease: false
           files: |
-            app/build/outputs/apk/release/app-release.apk
+#            app/build/outputs/apk/release/app-release.apk
             app/build/outputs/bundle/release/app-release.aab
