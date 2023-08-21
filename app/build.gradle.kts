@@ -14,8 +14,8 @@ android {
         applicationId = "com.devx.jetjoke"
         minSdk = 21
         targetSdk = 34
-        versionCode = 30
-        versionName = "1.0.3"
+        versionCode = 31
+        versionName = "1.0.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
