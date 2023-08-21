@@ -23,9 +23,11 @@ It also showcase the implemetation of some of the Modern Jetpack Architecture Co
 <a href="https://play.google.com/store/apps/details?id=com.devx.jetjoke"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=80px />
 
 ## 👨‍💻 App Demo :
-| ScreenSht | Video |
-| --- | --- |
-| <img src = "https://github.com/swapnil-musale/JetJoke/assets/15209914/53bac1df-21bc-4db8-bf42-74f55cf9ebf6.png" width=250/> | [Video Demo](https://github.com/swapnil-musale/JetJoke/assets/15209914/15d49fc6-666f-4acd-9b16-b590fe0df464) |
+### Screenshot
+<img src = "https://github.com/swapnil-musale/JetJoke/assets/15209914/53bac1df-21bc-4db8-bf42-74f55cf9ebf6.png" width=250/>
+
+### Video
+[Video Demo](https://github.com/swapnil-musale/JetJoke/assets/15209914/15d49fc6-666f-4acd-9b16-b590fe0df464)
 
 ## 📚 Libraries Used :
 * [Kotlin][0] : Kotlin is statically typed & first-class language for Android Development.
@@ -66,6 +68,10 @@ App is build using Clean Architecture design pattern. Which consist of three mod
 ## 🧪 Testing (ToDo):
 * Unit & UI tests are under ToDo list and will be done soon - please watch out this space after some time for more info this section.
 
+## 🌿 Branches :
+* [**master**](https://github.com/swapnil-musale/JetJoke) - master branch will contain the production code which is deployed by [CD Pipeline](https://github.com/swapnil-musale/JetJoke/actions/workflows/android_cd.yml).
+* [**development**](https://github.com/swapnil-musale/JetJoke/tree/development) - development branch will contain the on-going app feature developement or bug fix code which is targeted for upcoming release validated by [CI Pipeline](https://github.com/swapnil-musale/JetJoke/actions/workflows/android_ci.yml).
+
 ## 🚧 ToDo's :
 - [ ] Display Joke by selected Category
 - [ ] Search Joke functionality
@@ -74,7 +80,7 @@ App is build using Clean Architecture design pattern. Which consist of three mod
 - [ ] Offline Capability for jokes
 
 ## 🙌 Contributions :
-We welcome contributions to improve this project, Whether you want to fix a bug, implement a new feature, or suggest an enhancement, we're open to your ideas. Please create the issue at [here](https://github.com/swapnil-musale/JetJoke/issues).
+We welcome contributions to improve this project, Whether you want to fix a bug, implement a new feature, or suggest an enhancement, we're open to your ideas. Please create the issue at [here](https://github.com/swapnil-musale/JetJoke/issues) & If you have implemented some changes then raise the Pull request over ```development``` branch.
 
 ## 🤝 acknowledgement :
 JetJoke project use [Joke API](https://sv443.net/jokeapi/v2/) to fetch and display joke's in app.
