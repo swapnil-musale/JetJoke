@@ -47,13 +47,30 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-      - name: Deploy to Play Store
-        id: deploy
-        uses: r0adkll/upload-google-play@v1.1.1
+#      - name: Deploy to Play Store
+#        id: deploy
+#        uses: r0adkll/upload-google-play@v1.1.1
+#        with:
+#          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+#          packageName: com.devx.jetjoke
+#          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+#          track: production
+#          status: completed
+#          inAppUpdatePriority: 2
+
+      - name: Upload Release Build
+        uses: actions/upload-artifact@v3
         with:
-          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-          packageName: com.devx.jetjoke
-          releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: production
-          status: completed
-          inAppUpdatePriority: 2
+          name: release-artifacts
+          paths: |
+            app/build/outputs/apk/release/
+            app/build/outputs/bundle/release/
+
+      - name: Create Github Release
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
+          prerelease: false
+          files: |
+            app/build/outputs/apk/release/app-release.apk
+            app/build/outputs/bundle/release/app-release.aab
