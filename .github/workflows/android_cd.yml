@@ -1,5 +1,6 @@
 name: Android CD Pipeline
-# write permission is required to create release through github action
+
+# Grant write permission to create release through github action
 permissions:
   contents: write
 
@@ -9,13 +10,22 @@ on:
       - v*
 
 jobs:
+  validate:
+    name: Validate Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exit if not on production branch
+        if: endsWith(github.event.base_ref, 'master') == false
+        run: exit -1
+
   build:
-    name: Deploy Android App
+    needs: validate
+    name: Build App Release
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Set Up JDK 18
@@ -28,9 +38,13 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Build Release APK
+        id: buildReleaseApk
+        run: ./gradlew assembleRelease --stacktrace
+
       - name: Build Release AAB
-        id: buildRelease
-        run: ./gradlew bundleRelease
+        id: buildReleaseAab
+        run: ./gradlew bundleRelease --stacktrace
 
       - name: Generate Signed AAB
         id: sign
@@ -42,6 +56,11 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
+  deploy:
+    needs: build
+    name: Create release on PlayStore
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to Play Store
         id: deploy
         uses: r0adkll/upload-google-play@v1.1.1
@@ -53,15 +72,29 @@ jobs:
           status: completed
           inAppUpdatePriority: 2
 
+  upload:
+    needs: build
+    name: Upload Build Artifact on Github
+    runs-on: ubuntu-latest
+    steps:
       - name: Upload Release Build
         uses: actions/upload-artifact@v3
         with:
           name: release-artifacts
-          path: app/build/outputs/bundle/release/
+          path: |
+            app/build/outputs/apk/release/
+            app/build/outputs/bundle/release/
 
+  release:
+    needs: build
+    name: Prepare Github Release
+    runs-on: ubuntu-latest
+    steps:
       - name: Create Github Release
         uses: softprops/action-gh-release@v1
         with:
           generate_release_notes: true
           prerelease: false
-          files: app/build/outputs/bundle/release/app-release.aab
+          files: |
+            app/build/outputs/apk/release/app-release.apk
+            app/build/outputs/bundle/release/app-release.aab
