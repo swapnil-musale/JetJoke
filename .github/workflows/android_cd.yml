@@ -71,6 +71,7 @@ jobs:
           track: production
           status: completed
           inAppUpdatePriority: 2
+          whatsNewDirectory: distribution/whatsnew
 
   upload:
     needs: build
