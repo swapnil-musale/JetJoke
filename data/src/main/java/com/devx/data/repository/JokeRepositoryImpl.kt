@@ -1,32 +1,20 @@
 package com.devx.data.repository
 
 import com.devx.data.JokeApi
-import com.devx.data.mapper.toDto
 import com.devx.data.model.JokeCategoryData
+import com.devx.data.util.safeApiCall
 import com.devx.domain.model.JokeResponse
 import com.devx.domain.repository.JokeRepository
+import com.devx.domain.util.NetworkResponse
 import javax.inject.Inject
 
 class JokeRepositoryImpl @Inject constructor(private val jokeApi: JokeApi) : JokeRepository {
 
-    override suspend fun getJoke(): JokeResponse {
-        return try {
-            val response = jokeApi.getJoke()
-            response.body().toDto()
-        } catch (exception: Exception) {
-            JokeResponse(
-                joke = "",
-                setUp = "",
-                delivery = "",
-                category = "",
-                type = "",
-                error = true,
-                message = exception.message,
-            )
-        }
+    override suspend fun getJoke(): NetworkResponse<JokeResponse> {
+        return safeApiCall { jokeApi.getJoke() }
     }
 
-    override fun getJokeCategories(): ArrayList<String> {
-        return JokeCategoryData.jokeCategories
+    override fun getJokeCategories(): NetworkResponse<List<String>> {
+        return NetworkResponse.Success(data = JokeCategoryData.jokeCategories)
     }
 }

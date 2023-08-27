@@ -1,10 +1,12 @@
 package com.devx.data.model
 
 import androidx.annotation.Keep
+import com.devx.domain.model.JokeResponse
+import com.devx.domain.util.Mapper
 import com.squareup.moshi.Json
 
 @Keep
-data class JokeResponse(
+data class JokeResponseDto(
 
     @field:Json(name = "delivery")
     val delivery: String? = null,
@@ -35,4 +37,16 @@ data class JokeResponse(
 
     @field:Json(name = "message")
     val message: String? = null,
-)
+) : Mapper<JokeResponse> {
+    override fun mapToDomain(): JokeResponse {
+        return JokeResponse(
+            error = error ?: false,
+            type = type.orEmpty(),
+            setUp = setup,
+            joke = joke,
+            delivery = delivery,
+            category = category.orEmpty(),
+            message = message,
+        )
+    }
+}
