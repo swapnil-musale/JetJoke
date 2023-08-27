@@ -13,7 +13,7 @@ data class JokeResponse(
 fun getFakeJokeData(): JokeResponse {
     return JokeResponse(
         error = false,
-        type = "twopart", // "single"
+        type = "twopart",
         setUp = "So what's a set of predefined steps the government might take to preserve the environment?",
         delivery = "An Al-Gore-ithm.",
         category = "Programming",
