@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlin.ksp)
 }
 
@@ -59,8 +58,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":data"))
+    implementation(projects.domain)
+    implementation(projects.data)
 
     implementation(libs.bundles.androidx.compose.bom)
     implementation(platform(libs.kotlin.bom))
@@ -85,8 +84,4 @@ dependencies {
 
     debugImplementation(libs.test.compose.ui.tooling)
     debugImplementation(libs.test.compose.manifest)
-}
-
-kapt {
-    correctErrorTypes = true
 }
