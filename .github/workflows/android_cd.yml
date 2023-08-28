@@ -56,11 +56,6 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-  deploy:
-    needs: build
-    name: Create release on PlayStore
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to Play Store
         id: deploy
         uses: r0adkll/upload-google-play@v1.1.1
@@ -73,11 +68,6 @@ jobs:
           inAppUpdatePriority: 2
           whatsNewDirectory: distribution/whatsnew
 
-  upload:
-    needs: build
-    name: Upload Build Artifact on Github
-    runs-on: ubuntu-latest
-    steps:
       - name: Upload Release Build
         uses: actions/upload-artifact@v3
         with:
@@ -86,11 +76,6 @@ jobs:
             app/build/outputs/apk/release/
             app/build/outputs/bundle/release/
 
-  release:
-    needs: build
-    name: Prepare Github Release
-    runs-on: ubuntu-latest
-    steps:
       - name: Create Github Release
         uses: softprops/action-gh-release@v1
         with:
@@ -98,4 +83,4 @@ jobs:
           prerelease: false
           files: |
             app/build/outputs/apk/release/app-release.apk
-            app/build/outputs/bundle/release/app-release.aab
+            app/build/outputs/bundle/release/app-release.aab      
