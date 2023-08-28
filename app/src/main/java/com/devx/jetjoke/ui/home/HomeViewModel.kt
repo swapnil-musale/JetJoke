@@ -3,6 +3,7 @@ package com.devx.jetjoke.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devx.domain.useCase.GetJokeUseCase
+import com.devx.domain.util.NetworkResponse
 import com.devx.jetjoke.util.DispatchersProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,9 +19,9 @@ class HomeViewModel @Inject constructor(
     private val dispatchersProvider: DispatchersProvider,
 ) : ViewModel() {
 
-    private val _uiState: MutableStateFlow<HomeScreenState> =
-        MutableStateFlow(value = HomeScreenState())
-    val uiState: StateFlow<HomeScreenState> = _uiState.asStateFlow()
+    private val _uiState: MutableStateFlow<HomeScreenUiState> =
+        MutableStateFlow(value = HomeScreenUiState())
+    val uiState: StateFlow<HomeScreenUiState> = _uiState.asStateFlow()
 
     init {
         fetchJoke()
@@ -31,13 +32,25 @@ class HomeViewModel @Inject constructor(
             _uiState.update {
                 it.copy(isLoading = true)
             }
-            val response = getJokeUseCase()
-            if (response.error?.not() == true) {
-                _uiState.update {
-                    it.copy(
-                        isLoading = false,
-                        jokeData = response,
-                    )
+            when (val response = getJokeUseCase()) {
+                is NetworkResponse.Success -> {
+                    _uiState.update {
+                        it.copy(
+                            isLoading = false,
+                            jokeData = response.data,
+                        )
+                    }
+                }
+
+                is NetworkResponse.Error -> {
+                    // TODO Show Snack bar
+                    _uiState.update {
+                        it.copy(isLoading = false, errorMessage = response.errorMessage)
+                    }
+                }
+
+                is NetworkResponse.Exception -> {
+                    // TODO Show Snack bar
                 }
             }
         }

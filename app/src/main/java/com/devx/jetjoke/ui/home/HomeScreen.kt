@@ -1,7 +1,6 @@
 package com.devx.jetjoke.ui.home
 
 import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -41,10 +40,9 @@ import com.devx.jetjoke.ui.home.component.JokeCategoryTag
 import com.devx.jetjoke.ui.home.component.TypewriterText
 import com.devx.jetjoke.ui.shimmer.JokeShimmerItem
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun HomeScreen(
-    uiState: HomeScreenState,
+    uiState: HomeScreenUiState,
     loadNextJoke: () -> Unit,
 ) {
     var displayJoke by remember { mutableStateOf("") }
@@ -127,7 +125,7 @@ fun HomeScreen(
 private fun HomeScreenPreview() {
     JetJokeTheme {
         HomeScreen(
-            uiState = HomeScreenState(
+            uiState = HomeScreenUiState(
                 isLoading = false,
                 jokeData = getFakeJokeData(),
             ),
