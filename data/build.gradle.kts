@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlin.ksp)
 }
 
@@ -37,18 +36,14 @@ android {
 
 dependencies {
 
-    implementation(project(":domain"))
+    implementation(projects.domain)
     implementation(libs.core.ktx)
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.bundles.retrofit)
     ksp(libs.moshi.codegen)
 
     testImplementation(libs.test.junit)
     testImplementation(libs.test.espresso)
-}
-
-kapt {
-    correctErrorTypes = true
 }
