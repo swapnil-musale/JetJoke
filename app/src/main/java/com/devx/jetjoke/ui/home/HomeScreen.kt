@@ -29,16 +29,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
-import com.devx.data.util.Constant
-import com.devx.domain.model.getFakeJokeData
+import com.devx.data.util.networkUtil.Constant
 import com.devx.jetjoke.R
 import com.devx.jetjoke.theme.JetJokeTheme
 import com.devx.jetjoke.ui.home.component.HomeHeader
 import com.devx.jetjoke.ui.home.component.JokeCategoryTag
 import com.devx.jetjoke.ui.home.component.TypewriterText
 import com.devx.jetjoke.ui.shimmer.JokeShimmerItem
+import com.devx.jetjoke.util.ThemedPreview
 
 @Composable
 fun HomeScreen(
@@ -120,15 +120,12 @@ fun HomeScreen(
     }
 }
 
-@Preview(showSystemUi = true)
+@ThemedPreview
 @Composable
-private fun HomeScreenPreview() {
+private fun HomeScreenPreview(@PreviewParameter(HomeScreenPreviewParameter::class) uiState: HomeScreenUiState) {
     JetJokeTheme {
         HomeScreen(
-            uiState = HomeScreenUiState(
-                isLoading = false,
-                jokeData = getFakeJokeData(),
-            ),
+            uiState = uiState,
             loadNextJoke = {},
         )
     }

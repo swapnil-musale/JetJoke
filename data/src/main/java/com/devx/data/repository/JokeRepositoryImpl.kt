@@ -1,8 +1,8 @@
 package com.devx.data.repository
 
-import com.devx.data.JokeApi
 import com.devx.data.model.JokeCategoryData
-import com.devx.data.util.safeApiCall
+import com.devx.data.source.remote.JokeApi
+import com.devx.data.util.networkUtil.safeApiCall
 import com.devx.domain.model.JokeResponse
 import com.devx.domain.repository.JokeRepository
 import com.devx.domain.util.NetworkResponse

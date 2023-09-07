@@ -1,7 +1,7 @@
 package com.devx.jetjoke.di
 
-import com.devx.data.JokeApi
-import com.devx.data.util.Constant
+import com.devx.data.source.remote.JokeApi
+import com.devx.data.util.networkUtil.Constant
 import com.devx.jetjoke.BuildConfig
 import dagger.Module
 import dagger.Provides

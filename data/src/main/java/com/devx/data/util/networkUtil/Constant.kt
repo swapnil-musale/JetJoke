@@ -1,4 +1,4 @@
-package com.devx.data.util
+package com.devx.data.util.networkUtil
 
 object Constant {
     const val BASE_URL = "https://v2.jokeapi.dev/"

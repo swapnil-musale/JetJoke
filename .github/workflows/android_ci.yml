@@ -8,6 +8,10 @@ on:
     branches:
       - development
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Unit test implementation added through git hooks
   #  test:

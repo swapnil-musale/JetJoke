@@ -12,11 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.devx.jetjoke.R
 import com.devx.jetjoke.theme.JetJokeTheme
+import com.devx.jetjoke.util.ThemedPreview
 
 @Composable
 fun JokeCategoryTag(
@@ -40,7 +40,7 @@ fun JokeCategoryTag(
     }
 }
 
-@Preview(showBackground = true)
+@ThemedPreview
 @Composable
 private fun AppButtonPreview() {
     JetJokeTheme {

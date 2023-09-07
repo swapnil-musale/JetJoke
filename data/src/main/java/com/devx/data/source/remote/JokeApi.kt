@@ -1,4 +1,4 @@
-package com.devx.data
+package com.devx.data.source.remote
 
 import com.devx.data.model.JokeResponseDto
 import retrofit2.Response
