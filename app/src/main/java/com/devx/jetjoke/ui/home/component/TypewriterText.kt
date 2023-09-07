@@ -12,11 +12,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.devx.jetjoke.R
 import com.devx.jetjoke.theme.JetJokeTheme
+import com.devx.jetjoke.util.ThemedPreview
 import kotlinx.coroutines.delay
 
 @Composable
@@ -47,10 +47,10 @@ fun TypewriterText(texts: List<String>) {
     )
 }
 
-@Preview
+@ThemedPreview
 @Composable
 private fun TypewriterTextPreview() {
     JetJokeTheme {
-        TypewriterText(texts = listOf(stringResource(id = R.string.app_tagline)))
+        TypewriterText(texts = listOf(element = stringResource(id = R.string.app_tagline)))
     }
 }

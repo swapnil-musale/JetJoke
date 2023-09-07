@@ -1,4 +1,4 @@
-package com.devx.data.util
+package com.devx.data.util.networkUtil
 
 import com.devx.domain.util.Mapper
 import com.devx.domain.util.NetworkResponse

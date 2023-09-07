@@ -1,7 +1,7 @@
 package com.devx.jetjoke.di
 
-import com.devx.data.JokeApi
 import com.devx.data.repository.JokeRepositoryImpl
+import com.devx.data.source.remote.JokeApi
 import com.devx.domain.repository.JokeRepository
 import dagger.Module
 import dagger.Provides

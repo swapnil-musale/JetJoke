@@ -19,10 +19,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import com.devx.jetjoke.theme.JetJokeTheme
+import com.devx.jetjoke.util.ThemedPreview
 
 @Composable
 fun JokeShimmerItem() {
@@ -57,7 +57,7 @@ fun JokeShimmerItem() {
     )
 }
 
-@Preview
+@ThemedPreview
 @Composable
 private fun JokeShimmerItemPreview() {
     JetJokeTheme {
