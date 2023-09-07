@@ -1,3 +1,5 @@
+@file:Suppress("konsist.files under 'model' package should be data class only")
+
 package com.devx.data.model
 
 object JokeCategoryData {
