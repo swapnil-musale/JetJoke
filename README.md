@@ -58,6 +58,8 @@ It also showcase the implemetation of some of the Modern Jetpack Architecture Co
 [10]: https://docs.renovatebot.com/
 
 ## 🏗️ App Architecture :
+In this project we have integrated [**Konsist**](https://github.com/LemonAppDev/konsist) to protect Coding Standard & guard App Architecture from pushing accidental changes to git. [**Click Here**](https://github.com/swapnil-musale/JetJoke/tree/development/app/src/test/java/com/devx/jetjoke/konsist) to checkout test written for the same.
+
 App is build using Clean Architecture design pattern. Which consist of three module as follows :
 * [**app**](https://github.com/swapnil-musale/JetJoke/tree/master/app) - This module is responsible for handling user interaction, displaying data and managing user interface. Usually this module is decoupled from bossiness logic and communicate with domain module for accessing any data.
 * [**domain**](https://github.com/swapnil-musale/JetJoke/tree/master/domain) - In this module contains core bussiness logic and it doesn't contains any platform related api usage and should only use java/kotlin language apis.
