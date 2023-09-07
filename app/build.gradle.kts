@@ -84,4 +84,5 @@ dependencies {
 
     debugImplementation(libs.test.compose.ui.tooling)
     debugImplementation(libs.test.compose.manifest)
+    testImplementation(libs.konsist)
 }
