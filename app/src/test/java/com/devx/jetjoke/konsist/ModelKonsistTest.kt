@@ -3,6 +3,7 @@ package com.devx.jetjoke.konsist
 import androidx.annotation.Keep
 import com.lemonappdev.konsist.api.Konsist
 import com.lemonappdev.konsist.api.ext.list.modifierprovider.withDataModifier
+import com.lemonappdev.konsist.api.ext.list.withNameEndingWith
 import com.lemonappdev.konsist.api.ext.list.withPackage
 import com.lemonappdev.konsist.api.ext.provider.hasAnnotationOf
 import com.lemonappdev.konsist.api.verify.assert
@@ -45,12 +46,12 @@ class ModelKonsistTest {
     }
 
     @Test
-    fun `classes under 'model' package should end with Dto`() {
+    fun `classes end with 'Dto' suffix should reside in 'data-model' package`() {
         dataModuleScope
             .classes()
-            .withPackage("..model")
+            .withNameEndingWith("Dto")
             .assert {
-                it.hasNameEndingWith("Dto")
+                it.resideInPackage("..data.model")
             }
     }
 }

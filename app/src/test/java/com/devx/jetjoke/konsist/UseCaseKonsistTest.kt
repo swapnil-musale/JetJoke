@@ -13,17 +13,17 @@ class UseCaseKonsistTest {
     }
 
     @Test
-    fun `classes with 'UseCase' suffix should reside in 'useCase' package`() {
+    fun `classes end with 'UseCase' suffix should reside in 'domain-useCase' package`() {
         domainModuleScope
             .classes()
             .withNameEndingWith("UseCase")
             .assert {
-                it.resideInPackage("..useCase")
+                it.resideInPackage("..domain.useCase")
             }
     }
 
     @Test
-    fun `classes with 'UseCase' suffix should have a public method named 'invoke'`() {
+    fun `classes end with 'UseCase' suffix should have a public method named 'invoke'`() {
         domainModuleScope
             .classes()
             .withPackage("..useCase")
