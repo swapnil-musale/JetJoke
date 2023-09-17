@@ -1,3 +1,4 @@
+@file:Suppress("MatchingDeclarationName")
 package com.devx.jetjoke.util // ktlint-disable filename
 
 import android.content.res.Configuration
