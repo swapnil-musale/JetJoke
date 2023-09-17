@@ -3,8 +3,14 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.detekt)
 }
-
+tasks.whenTaskAdded {
+    if (name == "compileDebugKotlin") {
+        dependsOn(tasks.detekt)
+        mustRunAfter(tasks.detekt)
+    }
+}
 android {
     namespace = "com.devx.jetjoke"
     compileSdk = 34
