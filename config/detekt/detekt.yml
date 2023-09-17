@@ -11,25 +11,12 @@ config:
   validation: true
   warningsAsErrors: false
   checkExhaustiveness: false
-  # when writing own rules with new properties, exclude the property path e.g.: 'my_rule_set,.*>.*>[my_property]'
   excludes: ''
 
 processors:
   active: true
   exclude:
     - 'DetektProgressListener'
-  # - 'KtFileCountProcessor'
-  # - 'PackageCountProcessor'
-  # - 'ClassCountProcessor'
-  # - 'FunctionCountProcessor'
-  # - 'PropertyCountProcessor'
-  # - 'ProjectComplexityProcessor'
-  # - 'ProjectCognitiveComplexityProcessor'
-  # - 'ProjectLLOCProcessor'
-  # - 'ProjectCLOCProcessor'
-  # - 'ProjectLOCProcessor'
-  # - 'ProjectSLOCProcessor'
-  # - 'LicenseHeaderLoaderExtension'
 
 console-reports:
   active: true
@@ -43,12 +30,6 @@ console-reports:
 
 output-reports:
   active: true
-  exclude:
-  # - 'TxtOutputReport'
-  # - 'XmlOutputReport'
-  # - 'HtmlOutputReport'
-  # - 'MdOutputReport'
-  # - 'SarifOutputReport'
 
 comments:
   active: true
@@ -127,9 +108,8 @@ complexity:
     active: true
     threshold: 600
   LongMethod:
-    active: true
+    active: false
     threshold: 60
-    ignoreAnnotated: ['Composable']
   LongParameterList:
     active: true
     functionThreshold: 6

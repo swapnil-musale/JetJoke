@@ -29,10 +29,15 @@ tasks.register("installGitHooks", Exec::class.java) {
 }
 
 detekt {
-    toolVersion = libs.versions.detektVersion.toString()
+    toolVersion = libs.versions.detektVersion.get()
+    parallel = false
     config.setFrom(file("config/detekt/detekt.yml"))
+    buildUponDefaultConfig = false
     allRules = true
-    buildUponDefaultConfig = true
+    disableDefaultRuleSets = false
+    debug = false
+    ignoreFailures = false
+    basePath = projectDir.absolutePath
 }
 
 afterEvaluate {
