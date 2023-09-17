@@ -29,8 +29,7 @@ tasks.register("installGitHooks", Exec::class.java) {
 }
 
 detekt {
-    toolVersion = "1.23.1"
-//    baseline = file("$rootDir/detekt-baseline.xml")
+    toolVersion = libs.versions.detektVersion.toString()
     config.setFrom(file("config/detekt/detekt.yml"))
     allRules = true
     buildUponDefaultConfig = true
