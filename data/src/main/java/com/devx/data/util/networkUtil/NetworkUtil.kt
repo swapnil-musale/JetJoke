@@ -5,6 +5,7 @@ import com.devx.domain.util.NetworkResponse
 import retrofit2.HttpException
 import retrofit2.Response
 
+@Suppress("TooGenericExceptionCaught")
 suspend fun <R : Mapper<T>, T : Any> safeApiCall(execute: suspend () -> Response<R>): NetworkResponse<T> {
     return try {
         val response = execute()
