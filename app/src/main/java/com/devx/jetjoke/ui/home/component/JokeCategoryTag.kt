@@ -10,12 +10,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.devx.jetjoke.R
 import com.devx.jetjoke.theme.JetJokeTheme
+import com.devx.jetjoke.theme.tagColor
 import com.devx.jetjoke.util.ThemedPreview
 
 @Composable
@@ -34,7 +34,7 @@ fun JokeCategoryTag(
             color = MaterialTheme.colorScheme.onPrimary,
             modifier = modifier
                 .clip(shape = MaterialTheme.shapes.large)
-                .background(color = Color(0xFF95E1D3))
+                .background(color = tagColor)
                 .padding(horizontal = 24.dp, vertical = 8.dp),
         )
     }

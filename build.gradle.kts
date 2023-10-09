@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.kotlin.ksp) apply false
+    alias(libs.plugins.detekt)
 }
 
 tasks.register("copyGitHooks", Copy::class.java) {
@@ -25,6 +26,18 @@ tasks.register("installGitHooks", Exec::class.java) {
     doLast {
         logger.info("Git hook installed successfully.")
     }
+}
+
+detekt {
+    toolVersion = libs.versions.detektVersion.get()
+    parallel = false
+    config.setFrom(file("config/detekt/detekt.yml"))
+    buildUponDefaultConfig = false
+    allRules = true
+    disableDefaultRuleSets = false
+    debug = false
+    ignoreFailures = false
+    basePath = projectDir.absolutePath
 }
 
 afterEvaluate {
