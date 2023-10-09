@@ -25,7 +25,7 @@ okHttp3 = "4.11.0"
 moshi = "1.15.0"
 javaxInject = "1"
 hiltNavigation = "1.0.0"
-konsist = "0.12.2"
+konsist = "0.13.0"
 
 # Testing Library Version
 junit4 = "1.5.3"
