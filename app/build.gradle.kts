@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.detekt)
 }
-tasks.whenTaskAdded {
+tasks.configureEach {
     if (name == "compileDebugKotlin") {
         dependsOn(tasks.detekt)
         mustRunAfter(tasks.detekt)

@@ -8,7 +8,7 @@ java {
     sourceCompatibility = JavaVersion.VERSION_18
     targetCompatibility = JavaVersion.VERSION_18
 }
-tasks.whenTaskAdded {
+tasks.configureEach {
     if (name == "compileDebugKotlin") {
         dependsOn(tasks.detekt)
         mustRunAfter(tasks.detekt)
