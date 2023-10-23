@@ -84,11 +84,12 @@ dependencies {
     implementation(libs.bundles.retrofit)
     ksp(libs.moshi.codegen)
 
-    testImplementation(libs.test.junit)
-    androidTestImplementation(libs.test.espresso)
-    androidTestImplementation(libs.test.junitExtension)
-
-    debugImplementation(libs.test.compose.ui.tooling)
-    debugImplementation(libs.test.compose.manifest)
+    testImplementation(libs.junit.test)
     testImplementation(libs.konsist)
+
+    androidTestImplementation(libs.espresso.test)
+    androidTestImplementation(libs.junit.extension.test)
+
+    debugImplementation(libs.compose.ui.tooling.test)
+    debugImplementation(libs.compose.manifest.test)
 }

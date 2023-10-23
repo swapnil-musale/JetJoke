@@ -18,7 +18,7 @@ data class JokeResponseDto(
     val joke: String? = null,
 
     @field:Json(name = "setup")
-    val setup: String? = null,
+    val setUp: String? = null,
 
     @field:Json(name = "id")
     val id: Int? = null,
@@ -42,7 +42,7 @@ data class JokeResponseDto(
         return JokeResponse(
             error = error ?: false,
             type = type.orEmpty(),
-            setUp = setup,
+            setUp = setUp,
             joke = joke,
             delivery = delivery,
             category = category.orEmpty(),

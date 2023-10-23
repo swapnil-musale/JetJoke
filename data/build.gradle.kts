@@ -50,6 +50,6 @@ dependencies {
     implementation(libs.bundles.retrofit)
     ksp(libs.moshi.codegen)
 
-    testImplementation(libs.test.junit)
-    testImplementation(libs.test.espresso)
+    testImplementation(libs.junit.test)
+    testImplementation(libs.espresso.test)
 }

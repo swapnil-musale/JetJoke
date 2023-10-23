@@ -69,13 +69,14 @@ moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.re
 javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
 
 # Testing
-test-junit = { module = "junit:junit", version.ref = "junit" }
-test-junitExtension = { module = "androidx.test.ext:junit", version.ref = "junitExtension" }
-test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
-test-compose-ui-test = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "junit4" }
-test-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
-test-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+junit-test = { module = "junit:junit", version.ref = "junit" }
+junit-extension-test = { module = "androidx.test.ext:junit", version.ref = "junitExtension" }
+espresso-test = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+compose-ui-test = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "junit4" }
+coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinBOM" }
 konsist = { module = "com.lemonappdev:konsist", version.ref = "konsist" }
+compose-ui-tooling-test = { module = "androidx.compose.ui:ui-tooling" }
+compose-manifest-test = { module = "androidx.compose.ui:ui-test-manifest" }
 
 
 [bundles]

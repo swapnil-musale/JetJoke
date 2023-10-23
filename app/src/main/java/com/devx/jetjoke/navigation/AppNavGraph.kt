@@ -21,9 +21,12 @@ fun AppNavGraph() {
             val homeViewModel: HomeViewModel = hiltViewModel()
             val uiState = homeViewModel.uiState.collectAsStateWithLifecycle()
 
-            HomeScreen(uiState = uiState.value) {
-                homeViewModel.fetchJoke()
-            }
+            HomeScreen(
+                uiState = uiState.value,
+                loadNextJoke = {
+                    homeViewModel.fetchJoke()
+                },
+            )
         }
     }
 }
