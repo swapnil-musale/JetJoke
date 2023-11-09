@@ -1,7 +1,7 @@
 [versions]
 
 # Plugin Version
-androidGradlePlugin = "8.1.2"
+androidGradlePlugin = "8.1.3"
 androidLibrary = "8.1.3"
 kotlinAndroid = "1.9.10"
 kotlinJvm = "1.9.10"
