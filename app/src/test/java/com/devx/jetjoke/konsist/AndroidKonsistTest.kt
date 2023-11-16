@@ -5,8 +5,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.lemonappdev.konsist.api.Konsist
 import com.lemonappdev.konsist.api.ext.list.withAllParentsOf
 import com.lemonappdev.konsist.api.ext.provider.hasAnnotationOf
-import com.lemonappdev.konsist.api.verify.assert
-import com.lemonappdev.konsist.api.verify.assertNot
+import com.lemonappdev.konsist.api.verify.assertFalse
+import com.lemonappdev.konsist.api.verify.assertTrue
 import org.junit.Test
 
 class AndroidKonsistTest {
@@ -17,7 +17,7 @@ class AndroidKonsistTest {
             .scopeFromProject()
             .classes()
             .withAllParentsOf(ComponentActivity::class)
-            .assert {
+            .assertTrue {
                 it.name.endsWith("Activity")
             }
     }
@@ -27,8 +27,8 @@ class AndroidKonsistTest {
         Konsist
             .scopeFromProject()
             .files
-            .assertNot {
-                it.hasImports("android.util..")
+            .assertFalse {
+                it.hasImportWithName("android.util..")
             }
     }
 
@@ -38,8 +38,8 @@ class AndroidKonsistTest {
         Konsist
             .scopeFromProduction("app")
             .files
-            .assertNot {
-                it.containsFunction { function ->
+            .assertFalse {
+                it.hasFunction { function ->
                     function.hasAnnotationOf<Preview>()
                 }
             }

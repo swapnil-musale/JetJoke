@@ -2,7 +2,7 @@ package com.devx.jetjoke.konsist
 
 import com.lemonappdev.konsist.api.Konsist
 import com.lemonappdev.konsist.api.ext.list.withNameEndingWith
-import com.lemonappdev.konsist.api.verify.assert
+import com.lemonappdev.konsist.api.verify.assertTrue
 import org.junit.Test
 
 class RepositoryKonsistTest {
@@ -17,7 +17,7 @@ class RepositoryKonsistTest {
         domainModuleScope
             .interfaces()
             .withNameEndingWith("Repository")
-            .assert {
+            .assertTrue {
                 it.resideInPackage("..domain.repository")
             }
     }
@@ -27,7 +27,7 @@ class RepositoryKonsistTest {
         dataModuleScope
             .classes()
             .withNameEndingWith("RepositoryImpl")
-            .assert {
+            .assertTrue {
                 it.resideInPackage("..data.repository..")
             }
     }

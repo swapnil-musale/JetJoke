@@ -3,7 +3,7 @@ package com.devx.jetjoke.konsist
 import com.lemonappdev.konsist.api.Konsist
 import com.lemonappdev.konsist.api.ext.list.withNameEndingWith
 import com.lemonappdev.konsist.api.ext.list.withPackage
-import com.lemonappdev.konsist.api.verify.assert
+import com.lemonappdev.konsist.api.verify.assertTrue
 import org.junit.Test
 
 class UseCaseKonsistTest {
@@ -17,7 +17,7 @@ class UseCaseKonsistTest {
         domainModuleScope
             .classes()
             .withNameEndingWith("UseCase")
-            .assert {
+            .assertTrue {
                 it.resideInPackage("..domain.useCase")
             }
     }
@@ -28,8 +28,8 @@ class UseCaseKonsistTest {
             .classes()
             .withPackage("..useCase")
             .withNameEndingWith("UseCase")
-            .assert {
-                it.containsFunction { function ->
+            .assertTrue {
+                it.hasFunction { function ->
                     function.name == "invoke" && function.hasPublicOrDefaultModifier
                 }
             }

@@ -6,7 +6,7 @@ import com.lemonappdev.konsist.api.ext.list.modifierprovider.withDataModifier
 import com.lemonappdev.konsist.api.ext.list.withNameEndingWith
 import com.lemonappdev.konsist.api.ext.list.withPackage
 import com.lemonappdev.konsist.api.ext.provider.hasAnnotationOf
-import com.lemonappdev.konsist.api.verify.assert
+import com.lemonappdev.konsist.api.verify.assertTrue
 import org.junit.Test
 
 class ModelKonsistTest {
@@ -20,7 +20,7 @@ class ModelKonsistTest {
         dataModuleScope
             .files
             .withPackage("..model")
-            .assert {
+            .assertTrue {
                 it.classes().withDataModifier().isNotEmpty()
             }
     }
@@ -30,7 +30,7 @@ class ModelKonsistTest {
         dataModuleScope
             .classes()
             .withPackage("..model")
-            .assert {
+            .assertTrue {
                 it.hasAnnotationOf<Keep>()
             }
     }
@@ -40,8 +40,8 @@ class ModelKonsistTest {
         dataModuleScope
             .classes()
             .withPackage("..model")
-            .assert {
-                it.hasParents("Mapper")
+            .assertTrue {
+                it.hasParentWithName("Mapper")
             }
     }
 
@@ -50,7 +50,7 @@ class ModelKonsistTest {
         dataModuleScope
             .classes()
             .withNameEndingWith("Dto")
-            .assert {
+            .assertTrue {
                 it.resideInPackage("..data.model")
             }
     }

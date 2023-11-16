@@ -8,8 +8,8 @@ import com.lemonappdev.konsist.api.ext.list.withAllParentsOf
 import com.lemonappdev.konsist.api.ext.list.withNameEndingWith
 import com.lemonappdev.konsist.api.ext.provider.hasAnnotationOf
 import com.lemonappdev.konsist.api.ext.provider.representsTypeOf
-import com.lemonappdev.konsist.api.verify.assert
-import com.lemonappdev.konsist.api.verify.assertNot
+import com.lemonappdev.konsist.api.verify.assertFalse
+import com.lemonappdev.konsist.api.verify.assertTrue
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.junit.Test
 
@@ -24,7 +24,7 @@ class ViewModelKonsistTest {
         appModuleScope
             .classes()
             .withAllParentsOf(ViewModel::class)
-            .assert {
+            .assertTrue {
                 it.hasNameEndingWith("ViewModel")
             }
     }
@@ -34,7 +34,7 @@ class ViewModelKonsistTest {
         appModuleScope
             .classes()
             .withNameEndingWith("ViewModel")
-            .assert {
+            .assertTrue {
                 it.hasAnnotationOf<HiltViewModel>()
             }
     }
@@ -44,8 +44,8 @@ class ViewModelKonsistTest {
         appModuleScope
             .classes()
             .withNameEndingWith("ViewModel")
-            .assertNot {
-                it.hasParents("AndroidViewModel")
+            .assertFalse {
+                it.hasParentWithName("AndroidViewModel")
             }
     }
 
@@ -54,8 +54,8 @@ class ViewModelKonsistTest {
         appModuleScope
             .files
             .withNameEndingWith("ViewModel")
-            .assertNot {
-                it.hasImports("androidx.lifecycle.AndroidViewModel")
+            .assertFalse {
+                it.hasImportWithName("androidx.lifecycle.AndroidViewModel")
             }
     }
 
@@ -65,7 +65,7 @@ class ViewModelKonsistTest {
             .classes()
             .withAllParentsOf(ViewModel::class)
             .constructors
-            .assert {
+            .assertTrue {
                 it.parameters.none { parameter ->
                     parameter.representsTypeOf<Context>()
                 }
