@@ -2,7 +2,7 @@
 
 # Plugin Version
 androidGradlePlugin = "8.1.3"
-androidLibrary = "8.1.3"
+androidLibrary = "8.1.4"
 kotlinAndroid = "1.9.10"
 kotlinJvm = "1.9.10"
 androidxComposeCompiler = "1.5.3"
