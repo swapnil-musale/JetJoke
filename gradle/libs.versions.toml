@@ -13,7 +13,7 @@ detektVersion = "1.23.4"
 # Library Version
 coreKtx = "1.12.0"
 splashScreen = "1.0.1"
-activityCompose = "1.8.1"
+activityCompose = "1.8.2"
 composeNavigation = "2.7.6"
 composeBOM = "2023.10.01"
 kotlinBOM = "1.9.10"
