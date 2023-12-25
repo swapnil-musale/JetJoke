@@ -7,7 +7,7 @@ kotlinAndroid = "1.9.10"
 kotlinJvm = "1.9.10"
 androidxComposeCompiler = "1.5.3"
 jvmTarget = "17"
-kotlinKsp = "1.9.21-1.0.16"
+kotlinKsp = "1.9.22-1.0.16"
 detektVersion = "1.23.4"
 
 # Library Version
