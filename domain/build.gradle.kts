@@ -4,10 +4,6 @@ plugins {
     alias(libs.plugins.detekt)
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
 tasks.configureEach {
     if (name == "compileDebugKotlin") {
         dependsOn(tasks.detekt)
@@ -16,4 +12,9 @@ tasks.configureEach {
 }
 dependencies {
     implementation(libs.javax.inject)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
