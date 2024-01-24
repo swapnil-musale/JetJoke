@@ -28,7 +28,7 @@ hiltNavigation = "1.1.0"
 konsist = "0.13.0"
 
 # Testing Library Version
-junit4 = "1.5.4"
+junit4 = "1.6.0"
 junit = "4.13.2"
 junitExtension = "1.1.5"
 espressoCore = "3.5.1"
