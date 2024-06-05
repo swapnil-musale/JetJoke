@@ -1,34 +1,33 @@
 [versions]
 
 # Plugin Version
-androidGradlePlugin = "8.2.2"
-androidLibrary = "8.2.2"
-kotlinAndroid = "1.9.21"
-kotlinJvm = "1.9.21"
-androidxComposeCompiler = "1.5.7"
-jvmTarget = "17"
-kotlinKsp = "1.9.22-1.0.17"
+androidGradlePlugin = "8.4.1"
+androidLibrary = "8.4.1"
+kotlin = "2.0.0"
+jvmTarget = "1.8"
+kotlinKsp = "2.0.0-1.0.21"
 detektVersion = "1.23.5"
 
 # Library Version
-coreKtx = "1.12.0"
+kotlinBOM = "1.9.23"
+composeBOM = "2024.05.00"
+
+coreKtx = "1.13.1"
 splashScreen = "1.0.1"
-activityCompose = "1.8.2"
+activityCompose = "1.9.0"
 composeNavigation = "2.7.7"
-composeBOM = "2024.02.00"
-kotlinBOM = "1.9.22"
-androidXLifecycle = "2.7.0"
-androidMaterial3 = "1.2.0"
-hiltAndroid = "2.50"
+androidXLifecycle = "2.8.1"
+androidMaterial3 = "1.2.1"
+hiltAndroid = "2.51.1"
 retrofit = "2.9.0"
 okHttp3 = "4.12.0"
 moshi = "1.15.1"
 javaxInject = "1"
-hiltNavigation = "1.1.0"
-konsist = "0.13.0"
+hiltNavigation = "1.2.0"
+konsist = "0.15.0"
 
 # Testing Library Version
-junit4 = "1.6.1"
+junit4 = "1.6.7"
 junit = "4.13.2"
 junitExtension = "1.1.5"
 espressoCore = "3.5.1"
@@ -87,9 +86,10 @@ retrofit = ["retrofit", "moshi-converter", "okhttp3", "loggin-interceptor"]
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidLibrary" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 java-library = { id = "java-library" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlinKsp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektVersion" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
