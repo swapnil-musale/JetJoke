@@ -5,7 +5,7 @@ androidGradlePlugin = "8.4.1"
 androidLibrary = "8.4.1"
 kotlin = "2.0.0"
 jvmTarget = "1.8"
-kotlinKsp = "2.0.0-1.0.21"
+kotlinKsp = "2.0.0-1.0.22"
 detektVersion = "1.23.5"
 
 # Library Version
