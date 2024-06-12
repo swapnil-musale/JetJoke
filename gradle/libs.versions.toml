@@ -10,7 +10,7 @@ detektVersion = "1.23.6"
 
 # Library Version
 kotlinBOM = "2.0.0"
-composeBOM = "2024.05.00"
+composeBOM = "2024.06.00"
 
 coreKtx = "1.13.1"
 splashScreen = "1.0.1"
