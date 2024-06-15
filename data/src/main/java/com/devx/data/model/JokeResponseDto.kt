@@ -4,8 +4,10 @@ import androidx.annotation.Keep
 import com.devx.domain.model.JokeResponse
 import com.devx.domain.util.Mapper
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 @Keep
+@JsonClass(generateAdapter = true)
 data class JokeResponseDto(
 
     @field:Json(name = "delivery")

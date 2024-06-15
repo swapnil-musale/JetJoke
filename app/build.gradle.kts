@@ -37,6 +37,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
         getByName("debug") {
             isDebuggable = true
@@ -65,15 +66,17 @@ dependencies {
     implementation(projects.domain)
     implementation(projects.data)
 
-    implementation(libs.bundles.androidx.compose.bom)
     implementation(platform(libs.kotlin.bom))
+    implementation(libs.bundles.androidx.compose.bom)
 
     implementation(libs.core.ktx)
-    implementation(libs.androidx.splashScreen)
     implementation(libs.activity.compose)
-    implementation(libs.compose.navigation)
-    implementation(libs.compose.lifecycle)
+    implementation(libs.androidx.splashScreen)
     implementation(libs.androidx.lifecycle)
+
+    implementation(libs.compose.lifecycle)
+    implementation(libs.compose.viewmodel)
+    implementation(libs.compose.navigation)
 
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)

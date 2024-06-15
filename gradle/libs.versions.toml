@@ -1,8 +1,8 @@
 [versions]
 
 # Plugin Version
-androidGradlePlugin = "8.4.1"
-androidLibrary = "8.4.1"
+androidGradlePlugin = "8.5.0"
+androidLibrary = "8.5.0"
 kotlin = "2.0.0"
 jvmTarget = "1.8"
 kotlinKsp = "2.0.0-1.0.22"
@@ -10,13 +10,14 @@ detektVersion = "1.23.6"
 
 # Library Version
 kotlinBOM = "2.0.0"
-composeBOM = "2024.05.00"
+composeBOM = "2024.06.00"
 
 coreKtx = "1.13.1"
+composeViewmodel = "2.8.2"
 splashScreen = "1.0.1"
 activityCompose = "1.9.0"
 composeNavigation = "2.7.7"
-androidXLifecycle = "2.8.1"
+androidXLifecycle = "2.8.2"
 androidMaterial3 = "1.2.1"
 hiltAndroid = "2.51.1"
 retrofit = "2.11.0"
@@ -44,11 +45,12 @@ compose-navigation = { module = "androidx.navigation:navigation-compose", versio
 
 # Compose
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBOM" }
-androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidMaterial3" }
 ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
 compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "composeViewmodel" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidMaterial3" }
 
 # Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }

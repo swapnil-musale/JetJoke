@@ -1,7 +1,6 @@
 package com.devx.jetjoke.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
@@ -20,8 +19,7 @@ fun AppNavGraph() {
     ) {
         composable(route = ScreenRoute.HomeScreen.route) {
             val homeViewModel: HomeViewModel = hiltViewModel()
-            val uiState =
-                homeViewModel.uiState.collectAsStateWithLifecycle(lifecycleOwner = LocalLifecycleOwner.current)
+            val uiState = homeViewModel.uiState.collectAsStateWithLifecycle()
 
             HomeScreen(
                 uiState = uiState.value,
