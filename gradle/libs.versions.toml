@@ -30,7 +30,7 @@ konsist = "0.15.1"
 # Testing Library Version
 junit = "4.13.2"
 junitExtension = "1.1.5"
-espressoCore = "3.5.1"
+espressoCore = "3.6.1"
 
 
 [libraries]
