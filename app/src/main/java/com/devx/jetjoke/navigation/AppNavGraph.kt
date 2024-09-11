@@ -6,11 +6,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.devx.jetjoke.ui.actions.AppActions
 import com.devx.jetjoke.ui.home.HomeScreen
 import com.devx.jetjoke.ui.home.HomeViewModel
 
 @Composable
-fun AppNavGraph() {
+fun AppNavGraph(action : (AppActions)-> Unit) {
     val navController = rememberNavController()
 
     NavHost(
@@ -26,6 +27,7 @@ fun AppNavGraph() {
                 loadNextJoke = {
                     homeViewModel.fetchJoke()
                 },
+                action = action,
             )
         }
     }
