@@ -6,7 +6,7 @@ androidLibrary = "8.5.0"
 kotlin = "2.0.0"
 jvmTarget = "1.8"
 kotlinKsp = "2.0.0-1.0.22"
-detektVersion = "1.23.6"
+detektVersion = "1.23.7"
 
 # Library Version
 kotlinBOM = "2.0.0"
