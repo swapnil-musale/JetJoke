@@ -29,11 +29,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.devx.data.util.networkUtil.Constant
 import com.devx.jetjoke.R
 import com.devx.jetjoke.theme.JetJokeTheme
+import com.devx.jetjoke.ui.actions.AppActions
+import com.devx.jetjoke.ui.actions.ShareJokeAction
 import com.devx.jetjoke.ui.home.component.HomeHeader
 import com.devx.jetjoke.ui.home.component.JokeCategoryTag
 import com.devx.jetjoke.ui.home.component.TypewriterText
@@ -44,6 +47,7 @@ import com.devx.jetjoke.util.ThemedPreview
 fun HomeScreen(
     uiState: HomeScreenUiState,
     loadNextJoke: () -> Unit,
+    action : (AppActions)-> Unit,
 ) {
     var displayJoke by remember { mutableStateOf("") }
 
@@ -104,7 +108,7 @@ fun HomeScreen(
                 .padding(top = 470.dp)
                 .fillMaxWidth()
                 .wrapContentHeight(),
-            horizontalArrangement = Arrangement.Center,
+            horizontalArrangement = Arrangement.SpaceEvenly,
         ) {
             Image(
                 modifier = Modifier
@@ -114,7 +118,17 @@ fun HomeScreen(
                     .clickable { loadNextJoke() }
                     .padding(all = 8.dp),
                 painter = painterResource(id = R.drawable.ic_refresh),
-                contentDescription = null,
+                contentDescription = stringResource(R.string.get_next_joke_button),
+            )
+            Image(
+                modifier = Modifier
+                    .size(size = 64.dp)
+                    .clip(shape = MaterialTheme.shapes.extraLarge)
+                    .background(color = MaterialTheme.colorScheme.primary)
+                    .clickable { action.invoke(ShareJokeAction(displayJoke)) }
+                    .padding(all = 8.dp),
+                painter = painterResource(id = R.drawable.baseline_share_24),
+                contentDescription = stringResource(R.string.button_to_share_joke),
             )
         }
     }
@@ -127,6 +141,7 @@ private fun HomeScreenPreview(@PreviewParameter(HomeScreenPreviewParameter::clas
         HomeScreen(
             uiState = uiState,
             loadNextJoke = {},
+            action = {},
         )
     }
 }
