@@ -1,25 +1,25 @@
 [versions]
 
 # Plugin Version
-androidGradlePlugin = "8.5.0"
-androidLibrary = "8.5.0"
-kotlin = "2.0.0"
+androidGradlePlugin = "8.7.0"
+androidLibrary = "8.7.0"
+kotlin = "2.0.20"
 jvmTarget = "1.8"
-kotlinKsp = "2.0.0-1.0.22"
-detektVersion = "1.23.6"
+kotlinKsp = "2.0.20-1.0.25"
+detektVersion = "1.23.7"
 
 # Library Version
 kotlinBOM = "2.0.0"
-composeBOM = "2024.06.00"
+composeBOM = "2024.09.03"
 
 coreKtx = "1.13.1"
-composeViewmodel = "2.8.2"
 splashScreen = "1.0.1"
-activityCompose = "1.9.0"
-composeNavigation = "2.7.7"
-androidXLifecycle = "2.8.2"
-androidMaterial3 = "1.2.1"
-hiltAndroid = "2.51.1"
+activityCompose = "1.9.2"
+composeNavigation = "2.8.2"
+androidXLifecycle = "2.8.6"
+composeViewmodel = "2.8.6"
+androidMaterial3 = "1.3.0"
+hiltAndroid = "2.52"
 retrofit = "2.11.0"
 okHttp3 = "4.12.0"
 moshi = "1.15.1"
@@ -29,8 +29,8 @@ konsist = "0.15.1"
 
 # Testing Library Version
 junit = "4.13.2"
-junitExtension = "1.1.5"
-espressoCore = "3.5.1"
+junitExtension = "1.2.1"
+espressoCore = "3.6.1"
 
 
 [libraries]
