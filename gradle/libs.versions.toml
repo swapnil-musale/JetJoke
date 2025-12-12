@@ -2,7 +2,7 @@
 
 # Plugin Version
 androidGradlePlugin = "8.7.1"
-androidLibrary = "8.7.1"
+androidLibrary = "8.13.2"
 kotlin = "2.0.21"
 jvmTarget = "1.8"
 kotlinKsp = "2.0.21-1.0.26"
