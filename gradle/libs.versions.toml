@@ -3,13 +3,13 @@
 # Plugin Version
 androidGradlePlugin = "8.7.1"
 androidLibrary = "8.7.1"
-kotlin = "2.0.21"
+kotlin = "2.4.20"
 jvmTarget = "1.8"
 kotlinKsp = "2.0.21-1.0.26"
 detektVersion = "1.23.7"
 
 # Library Version
-kotlinBOM = "2.0.20"
+kotlinBOM = "2.4.20"
 composeBOM = "2024.10.00"
 
 coreKtx = "1.13.1"
