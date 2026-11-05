@@ -9,7 +9,7 @@ kotlinKsp = "2.0.21-1.0.26"
 detektVersion = "1.23.7"
 
 # Library Version
-kotlinBOM = "2.0.20"
+kotlinBOM = "2.4.21"
 composeBOM = "2024.10.00"
 
 coreKtx = "1.13.1"
